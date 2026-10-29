@@ -28,7 +28,7 @@ metadata:
     semver: '>=2.0.0'
 ---
 
-<!-- Modified for GitHub Copilot by sf-copilot-mirror; upstream copyright and license retained. -->
+<!-- Modified for GitHub Copilot by sf-core-skills; upstream copyright and license retained. -->
 
 > **Copilot compatibility:** Resolve resources relative to this skill's installed
 > directory. Read related skills from the sibling skill directories. Use the
@@ -42,7 +42,7 @@ metadata:
 > Skill metadata and instructions do not enforce tool permissions or supply Pi's
 > runtime guardrails. Keep Copilot approvals and organizational controls in effect.
 
-> **FSC standalone Copilot setup:** Use Copilot's terminal and file tools for
+> **Standalone Copilot setup:** Use Copilot's terminal and file tools for
 > the Bash/Read/Write/Edit capabilities named below. This collection does not install
 > MCP servers, plugin hooks, language servers, or related skills outside its selection.
 > Use the local CLI workflows documented by this skill; mandatory MCP steps remain

@@ -1,0 +1,1037 @@
+{
+  "classification": "Declared requirements, not proof of tool availability or end-to-end execution.",
+  "skills": [
+    {
+      "cli_tools": [],
+      "declared_mcp": {
+        "metadata-experts": {
+          "semver": ">=1.0.0",
+          "tools": [
+            "execute_metadata_action"
+          ]
+        }
+      },
+      "description": "Generate Salesforce Flows using the MCP tool execute_metadata_action. Use when the user asks to create, build, or generate a flow \u2014 including Screen, Autolaunched, Record-Triggered (before/after-save), Scheduled. Also trigger for flow-like requests such as \"when a record is created\", \"trigger daily at\", \"send an email when\", \"update the field when\", \"automate\", \"workflow\", or \"flow XML/metadata\". This is the only skill for Salesforce Flow generation.",
+      "name": "automation-flow-generate",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=7.0.0",
+          "tool": [
+            "npx"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Apply SLDS-compliant UI using the correct blueprints, styling hooks, utility classes, and icons. Use when building any UI that needs SLDS, choosing between Lightning Base Components and SLDS Blueprints, applying styling hooks for theming, using utility classes for layout and spacing, or selecting icons. Triggers include \"build a modal\", \"create a form\", \"data table\", \"SLDS styling\", \"style with hooks\", \"add an icon\".",
+      "name": "design-systems-slds-apply",
+      "related_outside_selection": [
+        "design-systems-slds-validate"
+      ],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=7.0.0",
+          "tool": [
+            "curl"
+          ]
+        },
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Run an ApexGuru performance scan on a Salesforce Apex project via the ApexGuru SFAP Scan API. Zips the project's Apex (any layout), submits it, polls to completion, decodes the base64 report, and presents performance antipattern violations (SOQL in loop, DML in loop, Schema.getGlobalDescribe(), SOQL without WHERE/LIMIT, unused SOQL fields) grouped by rule with severity, file:line, and suggested fixes \u2014 clearly attributed as 'Static only' or 'Production insights'. TRIGGER when the user says 'run ApexGuru', 'ApexGuru scan', 'check Apex performance', 'find governor-limit / performance antipatterns', 'SOQL in loop', 'scan my Apex for performance', or 'ApexGuru performance insights'. DO NOT TRIGGER for general static analysis or security scans (use dx-code-analyzer-run), for fixing code without scanning, or for onboarding an org to ApexGuru.",
+      "name": "dx-apexguru-scan",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        },
+        {
+          "semver": ">=7.0.0",
+          "tool": [
+            "curl"
+          ]
+        },
+        {
+          "semver": ">=11.0.0",
+          "tool": [
+            "java"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npm"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Set up, configure, and troubleshoot Salesforce Code Analyzer for any project. Handles installation, prerequisite checks, diagnosing broken setups, creating and editing code-analyzer.yml overrides, engine-specific settings, ignore patterns, severity overrides, and CI/CD pipeline setup. TRIGGER when: user says 'set up code analyzer', 'configure code analyzer', 'install code analyzer', 'code analyzer not working', 'fix my setup', 'scan failing', 'check my setup', 'enable/disable engine', 'exclude files', 'change severity', 'set up GitHub Actions', 'set up CI/CD', 'add to pipeline', 'pipeline fail', 'update my workflow', 'quality gate', 'fail on violations', 'scan changed files only', 'add SARIF', 'code-analyzer.yml', 'ESLint config', 'increase SFGE memory', or reports errors running Code Analyzer. DO NOT TRIGGER when: user wants to run a scan (use dx-code-analyzer-run), fix violations, explain rules, create custom rules (use dx-code-analyzer-custom-rule-create), or suppress violations.",
+      "name": "dx-code-analyzer-configure",
+      "related_outside_selection": [
+        "dx-code-analyzer-custom-rule-create"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "git"
+          ]
+        },
+        {
+          "semver": ">=11.0.0",
+          "tool": [
+            "java"
+          ]
+        },
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npm"
+          ]
+        },
+        {
+          "semver": ">=3.9.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Run Salesforce Code Analyzer to scan code for security, performance, best practice, and code style violations. Supports all engines (PMD, ESLint, CPD, RetireJS, Flow, SFGE, ApexGuru), targets (files, folders, git diff), categories, and severities. Also handles post-scan exploration: filtering results by engine/severity/category/file, and explaining what rules mean. TRIGGER when: user says 'scan my code', 'check security issues', 'run PMD/ESLint', 'find duplicates', 'analyze Flows', 'check vulnerable libraries', 'AppExchange review', 'lint my LWC', 'static analysis', 'code quality', 'show security violations', 'what is this rule', 'explain ApexCRUDViolation', 'filter results', or mentions engines/file types (.cls, .trigger, .js, .flow-meta.xml). Use this skill for scanning, exploring results, and listing rules. DO NOT TRIGGER when: user asks only about installation/configuration (use dx-code-analyzer-configure), or wants to create a custom rule (use dx-code-analyzer-custom-rule-create).",
+      "name": "dx-code-analyzer-run",
+      "related_outside_selection": [
+        "dx-code-analyzer-custom-rule-create"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=3.10",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Compare two Salesforce orgs side-by-side and produce a comparison report with drift score, or analyze a single org to produce an inventory covering metadata components, org permissions, system permissions, profiles, installed packages, licenses, and org limits. Use this skill when the user wants to compare orgs, diff orgs, audit configuration drift, find what changed between two environments, compare sandbox against production, or analyze a single org. Trigger phrases include: 'compare orgs', 'compare these 2 orgs', 'compare my orgs', 'diff orgs', 'org diff', 'what is different between these orgs', 'compare metadata', 'org comparison', 'audit org differences', 'compare sandbox to production', 'introspect org', 'org inventory', 'what is in my org', 'analyze org', 'org analysis', 'analyze my org', 'analyze my Salesforce org'. Do NOT use for retrieving metadata (use platform-metadata-retrieve), deploying metadata (use platform-metadata-deploy), or switching orgs (use dx-org-switch).",
+      "name": "dx-org-analyze",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use to EXECUTE Salesforce org operations immediately via the sf CLI (this skill runs them, it does NOT generate scripts): create scratch orgs (from edition, definition file, snapshot, or org shape), list/display/resume/delete scratch orgs, open orgs in browser. Trigger: 'create scratch org', 'create org from snapshot', 'delete scratch org', 'open my org'. Do NOT use for switching the default org (use dx-org-switch), deploying metadata (use platform-metadata-deploy), or creating/checking/listing/deleting org snapshots (use dx-org-snapshot-manage).",
+      "name": "dx-org-manage",
+      "related_outside_selection": [
+        "dx-org-snapshot-manage"
+      ],
+      "version": "1.3"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "ALWAYS USE THIS SKILL to assign permission sets to org users. Assign one or more permission sets to org users using the sf org assign permset command. TRIGGER when the user asks to assign, grant, give, add, or apply permission sets to users, admins, specific orgs, or specific users. Supports granting permissions, giving access, and adding permission sets to default admin or specific users via --on-behalf-of. DO NOT TRIGGER for listing permission sets or checking user permissions.",
+      "name": "dx-org-permission-set-assign",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Switches the active Salesforce org (default target-org) using the Salesforce CLI. Use whenever someone wants to change which org CLI commands run against \u2014 whether they say \"switch org\", \"change default org\", \"set my org to\", \"use alias\", \"point to\", or describe wanting to work against a specific org, scratch org, sandbox, or production.",
+      "name": "dx-org-switch",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use this skill to analyze a Salesforce Aura component bundle (.cmp, .app, .evt, .intf, Controller.js, Helper.js, Renderer.js) and produce a framework-agnostic migration blueprint (PRD.yaml / PRD.md / PRD.json) capturing public API, data requirements, slots, events, states, accessibility, styling, localization, and security posture. This is Phase 1 (analysis + PRD) only \u2014 it does NOT author or edit component code, wire adapters, or Jest tests, and does not write .html/.js/.css/.js-meta.xml. TRIGGER when the user says \"analyze this Aura component\", \"migrate Aura\", \"convert .cmp\", \"produce a migration blueprint\", \"generate a PRD for this Aura component\", or mentions aura:attribute, aura:handler, force:recordData, $Label, $Resource, component.get, cmp.find, or an input directory containing .cmp files. DO NOT TRIGGER when there is no Aura source (delegate downstream LWC authoring to experience-lwc-generate), for post-migration scoring, or for refactoring an existing modern component.",
+      "name": "experience-aura-lwc-migrate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npm"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npx"
+          ]
+        },
+        {
+          "semver": ">=3.9.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Lightning Web Components with PICKLES methodology and 165-point scoring. Use this skill when the user creates or edits LWC components, builds wire service patterns, or writes Jest tests for LWC. TRIGGER when: user creates/edits LWC components, touches lwc/**/*.js, .html, .css, .js-meta.xml files, or asks about wire service, SLDS, or Jest LWC tests. DO NOT TRIGGER when: Apex classes (use platform-apex-generate), Aura components, or Visualforce.",
+      "name": "experience-lwc-generate",
+      "related_outside_selection": [
+        "agentforce-generate"
+      ],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=3.8",
+          "tool": [
+            "python3"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use this skill as THE specialized Lightning Web Security (LWS) validator for a Lightning Web Component bundle (`.js`, `.ts`, `.html`, `.css`, `.js-meta.xml`) \u2014 the canonical LWS/Product-Security review for LWCs, NOT a generic code-security pass. It produces either a severity-ranked finding list with code-level remediations or a SARIF 2.1.0 JSON score report keyed by the `lws-001`\u2026`lws-023b` rule catalog. TRIGGER when the user asks to review, audit, or check an LWC component for LWS compliance issues and recommend fixes, score a component's LWS/security compliance, find dangerous DOM APIs or blocked sinks (`eval`, `Function`, `document.write`, `innerHTML`, `document.createElement('script')`, global-scope assignment to `window`/`globalThis`, unsafe URL schemes), or emit a SARIF security report. DO NOT TRIGGER for generic non-LWC security review, for building a new LWC (use experience-lwc-generate), accessibility (WCAG 2.2), RTL/i18n, or Apex/Aura/server-side review.",
+      "name": "experience-lwc-security-validate",
+      "related_outside_selection": [
+        "design-systems-slds-validate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "git"
+          ]
+        },
+        {
+          "semver": ">=1.6",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=4.0.0",
+          "tool": [
+            "tsc"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use when converting an existing JavaScript Lightning Web Component (.js, .html, .css) to TypeScript with full type annotations and a matching `.d.ts` file that exposes only the component's `@api` surface. TRIGGER when the user says \"convert LWC to TypeScript\", \"migrate LWC to TS\", \"rename .js to .ts for this component\", \"add types to my LWC\", \"generate .d.ts for this LWC\", \"type-annotate @api properties\", or \"produce declare module 'c/componentName' definitions\". DO NOT TRIGGER when the user is authoring a brand-new LWC from scratch (use experience-lwc-generate), generating Jest tests for an existing LWC (use experience-lwc-generate), or migrating an Aura component to LWC.",
+      "name": "experience-lwc-typescript-migrate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=7.0.0",
+          "tool": [
+            "curl"
+          ]
+        },
+        {
+          "semver": ">=1.7.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=1.1.0",
+          "tool": [
+            "openssl"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce Connected Apps and External Client Apps OAuth configuration with 120-point scoring. Use this skill to configure OAuth flows, JWT bearer auth, Connected Apps, and External Client Apps in Salesforce. TRIGGER when: user configures OAuth flows, JWT bearer auth, Connected Apps, ECAs, or touches .connectedApp-meta.xml / .eca-meta.xml files. DO NOT TRIGGER when: configuring Named Credentials for callouts (use integration-connectivity-generate), reviewing permission policies (use platform-metadata-deploy), or writing Apex token-handling code (use platform-apex-generate).",
+      "name": "integration-connectivity-connected-app-configure",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npm"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce integration architecture and runtime plumbing with 120-point scoring. Use this skill to set up Named Credentials, External Credentials, External Services, REST/SOAP callout patterns, Platform Events, and Change Data Capture. TRIGGER when: user sets up Named Credentials, External Services, REST/SOAP callouts, Platform Events, CDC, or touches .namedCredential-meta.xml files. DO NOT TRIGGER when: Connected App/OAuth config (use integration-connectivity-connected-app-configure), Apex-only logic (use platform-apex-generate), data import/export (use platform-data-manage), or CDC channel-membership metadata such as PlatformEventChannel, PlatformEventChannelMember, or EnrichedField (use integration-eventing-cdc-configure).",
+      "name": "integration-connectivity-generate",
+      "related_outside_selection": [
+        "agentforce-generate"
+      ],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use to enable Salesforce Change Data Capture (CDC) on a standard or custom object, configure a custom event channel, set a filter expression, or add enrichment fields. TRIGGER broadly on any of: 'enable CDC', 'enable Change Data Capture', 'turn on CDC', 'subscribe X to change events', 'only emit events for', 'filter change events', 'enrich change events', 'create a custom event channel'; or any mention of CDC, change events, PlatformEventChannel, PlatformEventChannelMember, EnrichedField, ChangeEvents channel, enrichment fields, change event filter; or when the user wants a downstream system to receive Salesforce data changes; or when the user touches .platformEventChannelMember-meta.xml / .platformEventChannel-meta.xml files. SKIP when publishing platform events, Pub/Sub API or REST/SOAP (use integration-connectivity-generate), or ManagedEventSubscription (out of scope for CDC). Always use this skill for CDC channel-membership metadata.",
+      "name": "integration-eventing-cdc-configure",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Create, read, update, and delete ManagedEventSubscription metadata in Salesforce. Use this skill for any work involving managed event subscriptions, platform event subscriptions, event channel subscribers, or .managedEventSubscription-meta.xml files. TRIGGER when: user asks to subscribe to a platform event, create a managed subscription, set up event replay, configure an event channel subscriber, update replay preset, activate or deactivate a subscription, delete a subscription, or manage ManagedEventSubscription metadata. SKIP when: user needs to create the platform event channel itself (use platform-custom-object-generate skill) or needs Flow-based event subscriptions (use automation-flow-generate skill).",
+      "name": "integration-eventing-subscription-configure",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Salesforce Industries Common Core (OmniStudio/Vlocity) Apex callable generation and review skill with 120-point scoring. Use when creating, reviewing, or migrating Industries callable Apex implementations. TRIGGER when: user creates or reviews System.Callable classes, migrates VlocityOpenInterface or VlocityOpenInterface2, or builds Industries callable extensions used by OmniStudio, Integration Procedures, or DataRaptors. DO NOT TRIGGER when: generic Apex classes or triggers (use platform-apex-generate), building Integration Procedures (use omnistudio-integration-procedure-generate), authoring OmniScripts (use omnistudio-omniscript-generate), configuring Data Mappers (use omnistudio-datamapper-generate), or analyzing namespace/dependency issues (use omnistudio-dependencies-analyze).",
+      "name": "omnistudio-callable-apex-generate",
+      "related_outside_selection": [
+        "external-diagram-mermaid-generate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "OmniStudio Data Mapper (formerly DataRaptor) creation and validation with 100-point scoring. Use when building Extract, Transform, Load, or Turbo Extract Data Mappers, mapping Salesforce object fields, or reviewing existing Data Mapper configurations. TRIGGER when: user creates Data Mappers, configures field mappings, works with OmniDataTransform metadata, or asks about DataRaptor/Data Mapper patterns. DO NOT TRIGGER when: building Integration Procedures (use omnistudio-integration-procedure-generate), authoring OmniScripts (use omnistudio-omniscript-generate), or analyzing cross-component dependencies (use omnistudio-dependencies-analyze).",
+      "name": "omnistudio-datamapper-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npm"
+          ]
+        },
+        {
+          "semver": ">=9.0.0",
+          "tool": [
+            "npx"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        },
+        {
+          "semver": ">=1.16.0",
+          "tool": [
+            "vlocity"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce Industries DataPack deployment automation using Vlocity Build. TRIGGER when: user deploys or validates OmniStudio/Vlocity DataPacks with vlocity commands (packDeploy/packRetry/packExport/packGetDiffs), sets up DataPack CI/CD pipelines, or troubleshoots DataPack migration errors. DO NOT TRIGGER when: deploying Salesforce metadata with sf project deploy (use platform-metadata-deploy), authoring OmniStudio artifacts (use omnistudio-*-build), or writing Apex/LWC business logic (use platform-apex-generate/experience-lwc-generate).",
+      "name": "omnistudio-datapacks-deploy",
+      "related_outside_selection": [
+        "omnistudio-epc-catalog-generate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Cross-cutting OmniStudio analysis skill for namespace detection, dependency visualization, and impact analysis across OmniScripts, FlexCards, Integration Procedures, and Data Mappers. TRIGGER when: user asks about OmniStudio dependencies, wants namespace detection (Core vs vlocity_cmt vs vlocity_ins), needs impact analysis, requests dependency graphs or Mermaid diagrams, or asks which components are affected by a change. DO NOT TRIGGER when: authoring OmniScripts (use omnistudio-omniscript-generate), building FlexCards (use omnistudio-flexcard-generate), creating Integration Procedures (use omnistudio-integration-procedure-generate), or configuring Data Mappers (use omnistudio-datamapper-generate).",
+      "name": "omnistudio-dependencies-analyze",
+      "related_outside_selection": [
+        "external-diagram-mermaid-generate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "OmniStudio FlexCard creation and validation with 130-point scoring. Use when building at-a-glance UI cards, configuring data source bindings to Integration Procedures, or reviewing existing FlexCard definitions for accessibility and performance. TRIGGER when: user creates FlexCards, configures data sources, designs card layouts, or asks about OmniUiCard metadata. DO NOT TRIGGER when: building OmniScripts (use omnistudio-omniscript-generate), creating Integration Procedures (use omnistudio-integration-procedure-generate), or analyzing dependencies (use omnistudio-dependencies-analyze).",
+      "name": "omnistudio-flexcard-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "OmniStudio Integration Procedure creation and validation with 110-point scoring. Use this skill when building server-side process orchestrations that combine Data Mapper actions, Apex Remote Actions, HTTP callouts, and conditional logic. TRIGGER when: user creates Integration Procedures, adds Data Mapper steps, configures Remote Actions, or reviews existing IP configurations. DO NOT TRIGGER when: building OmniScripts (use omnistudio-omniscript-generate), creating Data Mappers directly (use omnistudio-datamapper-generate), or analyzing cross-component dependencies (use omnistudio-dependencies-analyze).",
+      "name": "omnistudio-integration-procedure-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "OmniStudio OmniScript creation and validation with 120-point scoring. Use when building guided digital experiences, multi-step forms, or interactive processes that orchestrate Integration Procedures and Data Mappers. TRIGGER when: user creates OmniScripts, designs step flows, configures element types, or reviews existing OmniScript configurations. DO NOT TRIGGER when: building FlexCards (use omnistudio-flexcard-generate), creating Integration Procedures directly (use omnistudio-integration-procedure-generate), or analyzing dependencies (use omnistudio-dependencies-analyze).",
+      "name": "omnistudio-omniscript-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Primary Apex authoring skill for class generation, refactoring, and review. ALWAYS ACTIVATE when the user mentions Apex, .cls, triggers, or asks to create/refactor a class (service, selector, domain, batch, queueable, schedulable, invocable, DTO, utility, interface, abstract, exception, REST resource). Use this skill for requests involving SObject CRUD, mapping collections, fetching related records, scheduled jobs, batch jobs, trigger design, @AuraEnabled controllers, @RestResource endpoints, custom REST APIs, or code review of existing Apex.",
+      "name": "platform-apex-generate",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        },
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce debug log analysis and troubleshooting with 100-point scoring. TRIGGER when: user analyzes debug logs, hits governor limits, reads stack traces, or touches .log files from Salesforce orgs. DO NOT TRIGGER when: running Apex tests (use platform-apex-test-run), generating or fixing Apex code (use platform-apex-generate), or Agentforce session tracing (use agentforce-observe).",
+      "name": "platform-apex-logs-debug",
+      "related_outside_selection": [
+        "agentforce-observe"
+      ],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use to generate and validate Apex test classes with TestDataFactory patterns, bulk testing (251+ records), mocking, assertions, and disciplined test-fix loops. Use when creating Apex test classes (for triggers, services, controllers, batch jobs, queueables, and callouts), improving coverage, debugging or fixing failing Apex tests, or running test/coverage analysis. Triggers on *Test.cls files, sf apex run test, coverage reports. Do NOT trigger for production Apex (use platform-apex-generate) or Jest/LWC tests.",
+      "name": "platform-apex-test-generate",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Apex test execution, coverage analysis, and test-fix loops with 120-point scoring. Use when the user runs Apex tests, checks code coverage, fixes failing tests, or touches *Test.cls / *_Test.cls files. DO NOT TRIGGER when writing Apex production code (use platform-apex-generate), Agentforce agent testing (use agentforce-test), or Jest/LWC tests (use experience-lwc-generate).",
+      "name": "platform-apex-test-run",
+      "related_outside_selection": [
+        "agentforce-test"
+      ],
+      "version": "1.2"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use this skill when users need to create or configure tab-based Salesforce Custom Applications with navigation, branding, and action overrides. Trigger when users mention custom apps, application metadata, app navigation, or organizing tabs into applications. Use when users want to create app containers for tabs and pages. Do NOT use when the goal is hosting a React UI bundle in the App Launcher \u2014 use experience-ui-bundle-custom-app-generate for that case.",
+      "name": "platform-custom-application-generate",
+      "related_outside_selection": [
+        "experience-ui-bundle-custom-app-generate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {
+        "metadata-grounding": {
+          "semver": ">=1.0.0",
+          "tools": [
+            "search_metadata"
+          ]
+        }
+      },
+      "description": "Use when users create, generate, or validate Salesforce Custom Field metadata. Trigger on custom fields, field types, Roll-Up Summary, Master-Detail/Lookup relationships, formula fields, picklists, dependent (controlling) picklists, referencing a value set from a field, or scoping picklist values per record type; also field deployment errors, including a record type that won't deploy without a business process. DO NOT TRIGGER for creating/customizing the value set itself \u2014 a new GlobalValueSet or a StandardValueSet catalog like Industry \u2014 use platform-value-set-generate; this skill covers the field that references a value set, not the value set definition.",
+      "name": "platform-custom-field-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.136.8",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use to create, generate, or validate Salesforce Custom Metadata Type metadata \u2014 the __mdt object, fields, and deployable records. Trigger on custom metadata types, CMDT, __mdt objects, .md-meta.xml files, or cross-org reference/config data; also admin-maintained mapping/lookup/crosswalk tables (config that changes without a deploy belongs in a CMDT, never hardcoded in Apex/Flow), and CMDT deploy errors. DO NOT TRIGGER for Custom Settings (use platform-custom-setting-generate), business-record objects (use platform-custom-object-generate), or secrets/API keys (use a Named Credential).",
+      "name": "platform-custom-metadata-type-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use when users create, generate, or validate Salesforce Custom Object metadata. Trigger on custom objects, .object files, sharing models, name fields, or validation rules \u2014 e.g. \"create a custom object\" \u2014 and deployment errors around sharing models and Master-Detail relationships. Also keep the object's <description> current when its fields or validation rules change. Do NOT use for non-Custom-Object metadata (Apex, Flows, LWC, Permission Sets, Custom Metadata Types) or standard objects.",
+      "name": "platform-custom-object-generate",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.136.8",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use to create, generate, or validate Salesforce Custom Setting metadata. Trigger on custom settings (hierarchy/list), customSettingsType, SetupOwnerId, per-profile/per-user config overrides, feature flags/toggles, kill switches, or admin on/off switches (e.g. bypass triggers during a data load); also \"create a custom setting\" or a setting that silently deployed as a regular object. A kill switch is just a checkbox on a hierarchy setting \u2014 generate ONLY the setting, never an Apex trigger/handler. DO NOT TRIGGER for Custom Metadata Types (use platform-custom-metadata-type-generate), business-record objects (use platform-custom-object-generate), or secrets/tokens (use a Named Credential).",
+      "name": "platform-custom-setting-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use this skill when users need to create or configure Salesforce Custom Tabs. Trigger when users mention tabs, navigation tabs, object tabs, web tabs, Visualforce tabs, Lightning component tabs, app page tabs, or tab configuration. Also use when users want to add navigation to custom objects, create tabs for external content, or set up Lightning page tabs. Always use this skill for any custom tab work.",
+      "name": "platform-custom-tab-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=3.8",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Authoritative field/schema reference for 2130 STANDARD Salesforce objects \u2014 sObject and Tooling field API names, types, properties (filterable/sortable/groupable/updateable), and relationships for Account, Contact, Opportunity, Lead, Case, ApexClass, and more. Load alongside a SOQL/Apex skill when fields/types/capabilities are unverified \u2014 not for query syntax or optimization alone. TRIGGER when verifying/debugging fields in a SOQL/SOSL query or DML against a standard object. Custom __c objects/fields are NOT covered \u2014 describe the live org (sf sobject describe). DO NOT TRIGGER for authoring/deploying *-meta.xml or sfdx source (use the Metadata API skill).",
+      "name": "platform-data-and-tooling-api-context-get",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        },
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=3.8.0",
+          "tool": [
+            "python3"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce data operations with 130-point scoring. Use to create, update, delete, bulk import/export, generate test data, and clean up org records via sf CLI and anonymous Apex. TRIGGER on creating test data, bulk import/export, sf data CLI commands, data-factory patterns for Apex tests, or seeding/cleaning org records. DO NOT TRIGGER for SOQL query writing only (use platform-soql-query), Apex test execution (use platform-apex-test-run), or metadata deployment (use platform-metadata-deploy).",
+      "name": "platform-data-manage",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.126.4",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {
+        "metadata-experts": {
+          "semver": ">=1.0.0",
+          "tools": [
+            "execute_metadata_action"
+          ]
+        }
+      },
+      "description": "Use when users create, generate, modify, or validate Salesforce Lightning pages (FlexiPages). Trigger on RecordPage, AppPage, HomePage, Lightning pages, adding components to a page, page customization (e.g. 'customize the record page'), or .flexipage-meta.xml files (regions, components, deployment errors). DO NOT TRIGGER for Visualforce pages, page layout assignments in the UI, UI Bundle/Experience Cloud site pages, or Aura/Lightning Web Component development without FlexiPage context.",
+      "name": "platform-flexipage-generate",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use this skill when users need to create, generate, or validate Salesforce List View metadata. Trigger when users mention list views, filtered record lists, creating views, setting up record columns, filtering records by criteria, or ask about list view visibility. Also use when users say things like \"I need a view that shows...\", \"filter records by...\", \"create a list view for...\", or when they're working with ListView XML files and need validation or troubleshooting.",
+      "name": "platform-list-view-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=18.0.0",
+          "tool": [
+            "node"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "REQUIRED companion for Salesforce metadata generation \u2014 load this schema/API-context skill in the SAME turn as ANY metadata generator (if you load a generator, you ALSO load this). Use whenever you create, generate, edit, or author metadata or a *-meta.xml file (custom object, field, flow, and 604 Metadata API types): it gives authoritative schema, required flags, and XML structure so files deploy cleanly. Trigger on *-meta.xml, metadata schema, api context. DO NOT use for SOQL, DML, runtime sObject access, or Tooling API records.",
+      "name": "platform-metadata-api-context-get",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=7.0.0",
+          "tool": [
+            "curl"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "git"
+          ]
+        },
+        {
+          "semver": ">=1.7.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Salesforce DevOps automation using sf CLI v2. TRIGGER when: user deploys metadata, validates a deploy or does a dry-run, deploys to a Production org, quick-deploys a validated job ID, ships/promotes to prod, creates/manages scratch orgs or sandboxes, sets up CI/CD pipelines, or troubleshoots deployment errors with sf project deploy. DO NOT TRIGGER when: writing Apex code, building LWC components (use experience-lwc-generate), creating metadata definitions (use platform-custom-object-generate), deleting metadata from an org (use platform-destructive-deploy), or querying org data (use platform-data-manage).",
+      "name": "platform-metadata-deploy",
+      "related_outside_selection": [
+        "agentforce-generate",
+        "agentforce-test"
+      ],
+      "version": "1.2"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "ALWAYS USE THIS SKILL to retrieve metadata from an org to your local project with sf project retrieve start. Supports retrieval by all changes, source directory, metadata type (wildcards), manifest (package.xml), or package name, in source or metadata (ZIP) format. Use when the user asks to retrieve, pull, sync, or download metadata, Apex classes, or custom objects. DO NOT TRIGGER for deploying metadata (use platform-metadata-deploy), listing metadata, or generating a package.xml (use platform-manifest-generate). NEVER use MCP tools.",
+      "name": "platform-metadata-retrieve",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Generates correct, deployable Salesforce permission set metadata (PermissionSet XML) with object, field, user, and app permissions. Use this skill when creating or editing permission set metadata, object permissions, field-level security (FLS), tab visibility, or deploying permission sets.",
+      "name": "platform-permission-set-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {
+        "salesforce-api-context": {
+          "semver": ">=1.0.0",
+          "tools": [
+            "get_metadata_type_context",
+            "get_metadata_type_sections",
+            "get_metadata_type_shape"
+          ]
+        }
+      },
+      "description": "Use when users create, generate, or validate Salesforce Lightning Report metadata (.report-meta.xml) \u2014 tabular, summary, matrix, or joined reports with columns, groupings, filters, charts, cross-filters, buckets, formulas, or time-frame filters. Triggers on \"create a report\", \"build a report\", \"add a chart\", or .report-meta.xml deploy errors. Do NOT trigger for Custom Report Type metadata (use platform-custom-report-type-generate), dashboards, list views, running reports in the UI, or SOQL.",
+      "name": "platform-report-generate",
+      "related_outside_selection": [
+        "platform-custom-report-type-generate"
+      ],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Bulk-realign an existing Salesforce UserRole hierarchy from an external org-chart artifact (PDF, xlsx, or plain-text list of role-and-parent pairs) in one admin-approved manifest. Clarify scope and whether users move with roles, resolve identities that do not match verbatim, diff the artifact against the current tree, and submit create, rename, reparent, empty-role delete, and user-assignment mutations together. Triggers on \"reorganize the role hierarchy\", \"apply this org chart to roles\", \"bulk update role parents\", \"realign roles from PDF\", \"restructure the role hierarchy\", \"reparent roles from this spreadsheet\". Do not trigger for a single role create, rename, or reparent with no other changes, or for asking which roles exist or how they are nested \u2014 that is `managing-roles`. Do not trigger for territory, account, or forecast hierarchies, or for authoring sharing rules.",
+      "name": "platform-role-hierarchy-apply",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use when the user wants to retrieve or update Organization-Wide Default (OWD) sharing settings for Salesforce objects. TRIGGER on org-wide defaults, checking/viewing sharing defaults, changing default access levels (Private, Public Read Only, Public Read/Write, Controlled by Parent), internal/external access for standard or custom objects, making records private, or sharingModel in .object-meta.xml files. DO NOT TRIGGER for sharing rules, criteria-based sharing, role hierarchy, or manual sharing \u2014 delegate to platform-sharing-rules-generate.",
+      "name": "platform-sharing-owd-configure",
+      "related_outside_selection": [],
+      "version": "1.2"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use when users get, create, edit, delete, or retrieve Salesforce Sharing Rules metadata for record-level access. TRIGGER on sharing rules, record/criteria-based/role-based/guest-user sharing, sharingCriteriaRules/sharingOwnerRules/sharingGuestRules, .sharingRules-meta.xml files, or sharing records with roles or groups, including viewing or modifying existing rules. DO NOT TRIGGER for permission sets/profiles or object-level (not record-level) security (use platform-permission-set-generate).",
+      "name": "platform-sharing-rules-generate",
+      "related_outside_selection": [],
+      "version": "1.3"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=1.6.0",
+          "tool": [
+            "jq"
+          ]
+        },
+        {
+          "semver": ">=3.10.0",
+          "tool": [
+            "python3"
+          ]
+        },
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {},
+      "description": "Use when the user needs SOQL/SOSL authoring or optimization: natural-language-to-query generation, relationship queries, aggregates, query-plan/selectivity analysis, and performance or safety improvements. TRIGGER when the user writes, optimizes, or debugs SOQL/SOSL, touches .soql files, or asks about relationship queries, aggregates, or query performance. DO NOT TRIGGER for bulk data operations (use platform-data-manage), Apex DML logic (use platform-apex-generate), or report/dashboard queries.",
+      "name": "platform-soql-query",
+      "related_outside_selection": [],
+      "version": "1.1"
+    },
+    {
+      "cli_tools": [],
+      "declared_mcp": {},
+      "description": "Use this skill when users need to create, modify, or validate Salesforce Validation Rules. Trigger when users mention validation rules, field validation, data quality rules, formula validation, error messages, or validation logic. Also use when users encounter validation errors, need to update formulas, or want to enforce business rules at the data layer. Always use this skill for any validation rule work.",
+      "name": "platform-validation-rule-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    },
+    {
+      "cli_tools": [
+        {
+          "semver": ">=2.0.0",
+          "tool": [
+            "sf"
+          ]
+        }
+      ],
+      "declared_mcp": {
+        "metadata-grounding": {
+          "semver": ">=1.0.0",
+          "tools": [
+            "query_metadata",
+            "search_metadata"
+          ]
+        }
+      },
+      "description": "Use to create, generate, or validate a Salesforce GlobalValueSet (reusable picklist shared across fields) or customize a StandardValueSet (built-in picklists like Industry, Lead Source, Opportunity Stage). Trigger on global/standard value set, reusable picklist, .globalValueSet-meta.xml or .standardValueSet-meta.xml, or deploy errors adding values to a standard picklist. DO NOT TRIGGER for a one-off inline picklist on a single field with no reuse \u2014 use platform-custom-field-generate.",
+      "name": "platform-value-set-generate",
+      "related_outside_selection": [],
+      "version": "1.0"
+    }
+  ],
+  "skills_with_declared_mcp": 5,
+  "upstream": {
+    "commit": "985407c7f7896030759d3310fe47d652265916b3",
+    "ref": "main",
+    "repository": "https://github.com/forcedotcom/sf-skills.git"
+  }
+}

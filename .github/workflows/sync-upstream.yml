@@ -1,0 +1,48 @@
+name: Check Salesforce upstream
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 20 * * 0'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: salesforce-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  propose-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -q
+      - run: python scripts/sync.py --verify
+      - name: Check selected upstream files and reapply Copilot adaptations
+        run: python scripts/sync.py --update-if-needed --report "$RUNNER_TEMP/upstream-report.json"
+      - run: python scripts/sync.py --verify
+      - name: Reproduce the proposed snapshot from its exact accepted commit
+        run: python scripts/sync.py --locked --check
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/salesforce-upstream-sync
+          commit-message: 'chore: update selected Salesforce skills'
+          title: 'Update Salesforce skills with maintained Copilot adaptations'
+          body: |
+            Refreshes selected skills from the official Salesforce upstream.
+
+            Reapplies the maintained Copilot adapter notes and exact replacements.
+            Direct local edits and replacement conflicts stop the job before overwriting files.
+            Review upstream.lock.json, CATALOG.md, and DEPENDENCIES.md before merging.
+
+            Local integrity, regression tests, and locked regeneration passed.
+            No upstream scripts were executed and no Salesforce org was accessed by this job.
+            Live skill behavior and newly declared service requirements still need review.
+          add-paths: .

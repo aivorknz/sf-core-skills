@@ -46,3 +46,6 @@ coverage/
 test-results/
 dist/
 out/
+
+# Local sync/install reports
+.sync/
